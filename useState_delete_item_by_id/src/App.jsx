@@ -25,6 +25,7 @@ const App = () => {
 
   return (
     <>
+      {  users.length > 0 && 
       <table className="w-full text-left table-auto min-w-max">
         <thead>
           <tr>
@@ -56,6 +57,11 @@ const App = () => {
           }
         </tbody>
       </table>
+      }
+
+      { users.length > 0 || 
+        <h1 className="m-4 text-2xl font-bold leading-none tracking-tight text-gray-600 md:text-2xl lg:text-3xl dark:text-white">No users data found!!!</h1>
+      }
     </>
   )
 }
