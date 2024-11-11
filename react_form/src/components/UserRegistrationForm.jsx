@@ -11,17 +11,22 @@ const UserRegistrationForm = ({ setAllUsers, allUsers }) => {
     
     const registerUser = (e) => {
         e.preventDefault();
-        const newUser = {
-            id: generateRandomId(),
-            firstName, 
-            lastName, 
-            age, 
-            city, 
-            country
-        }
 
-        setAllUsers([...allUsers, newUser]);
-        resetFormFields();
+        if(firstName, lastName, age, city, country) {
+            const newUser = {
+                id: generateRandomId(),
+                firstName, 
+                lastName, 
+                age, 
+                city, 
+                country
+            }
+    
+            setAllUsers([...allUsers, newUser]);
+            resetFormFields();
+        } else {
+            alert('All fields are required!!!!');
+        }
     }
 
     const resetFormFields = () => {
@@ -31,7 +36,6 @@ const UserRegistrationForm = ({ setAllUsers, allUsers }) => {
         setCity('');
         setCountry('');
     }
-
 
     return (
         <div className="w-2/4">
