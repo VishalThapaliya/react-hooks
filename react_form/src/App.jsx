@@ -1,10 +1,10 @@
 import './App.css'
-import UserRegistrationForm from './components/UserRegistrationForm'
+import UsersManagement from './components/UsersManagement'
 
 function App() {
   return (
     <>
-      <UserRegistrationForm />      
+      <UsersManagement />
     </>
   )
 }
