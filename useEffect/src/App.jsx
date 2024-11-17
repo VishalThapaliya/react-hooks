@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import CleanUp from './components/CleanUp';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1>useEffect Hook</h1>
         <p>This Hook is used to perform side effects in your components. The useEffect hook contains a callback function that comes into effect when the page loads. It allows us to execute some functions when a component gets updated.</p>
         
@@ -37,7 +38,9 @@ function App() {
             count is {count}
           </button>
         </div>
-      </div>
+      </div> */}
+
+      <CleanUp />
     </>
   )
 }
