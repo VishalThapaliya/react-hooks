@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react'
+import Loading from './Loading';
 
 const UsersCard = () => {
     const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const getUsers = async () => {
-        const users = await fetch(`https://api.github.com/users`);
-        const usersData = await users.json();
-        console.log(usersData)
-        setUsers(usersData);
+        try {
+            const users = await fetch(`https://api.github.com/users`);
+            const usersData = await users.json();
+            setUsers(usersData);
+            setLoading(false);
+        } catch(error) {
+            setLoading(false);
+            console.log("Error : ", error);
+        }
+        
     }
 
     useEffect(() => {
         getUsers();
     }, []);
 
+    if(loading) {
+        return <Loading />
+    }
+
     return (
         <>
-            <h2>Github Users</h2>
+            <h2 className='title'>Github Users</h2>
 
             <div className="max-w-full w-screen h-screen flex justify-between items-center flex-wrap gap-4">
                 {
