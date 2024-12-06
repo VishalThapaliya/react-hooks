@@ -20,3 +20,8 @@
   text-align: center;
   margin-block-end: 20px;
 }
+
+.verified-icon svg {
+  height: 3em;
+  width: 3em;;
+}
